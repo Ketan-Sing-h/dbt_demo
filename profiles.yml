@@ -10,4 +10,31 @@ dbt_demo:
       type: snowflake
       user: dbt
       warehouse: COMPUTE_WH
+
+    # prod:
+    #   account: lqkvsal-qn35413
+    #   database: RAW
+    #   password: dbtPassword123
+    #   role: transform
+    #   schema: AIRBNB
+    #   threads: 1
+    #   type: snowflake
+    #   user: dbt
+    #   warehouse: COMPUTE_WH
+
   target: dev
+
+
+# dbt_demo1:
+#   outputs:
+#     dev:
+#       account: lqkvsal-qn35413
+#       database: RAW
+#       password: dbtPassword123
+#       role: transform
+#       schema: AIRBNB
+#       threads: 1
+#       type: snowflake
+#       user: dbt
+#       warehouse: COMPUTE_WH
+#   target: dev
