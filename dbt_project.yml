@@ -8,14 +8,19 @@ profile: 'dbt_demo'
 # found in the "models/" directory. You probably won't need to change these!
 model-paths: ["models"]
 macro-paths: ["macros"]
+
+clean-targets:
+  - "target"
+
 models:
   dbt_demo:
+    # +materialized: table
     # Config indicated by + and applies to all files under models/example/
     staging:
-      +materialized: table
+      +materialized: view
       +database: stg
       +schema: airbnb
     integration:
-      +materialized: table
+      # +materialized: table
       +database: int
       +schema: airbnb
