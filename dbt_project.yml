@@ -21,6 +21,10 @@ models:
       +database: stg
       +schema: airbnb
     integration:
-      # +materialized: table
+      +materialized: table
       +database: int
       +schema: airbnb
+    dwh:
+      +database: dwh
+      +schema: airbnb
+      +materialized: table
