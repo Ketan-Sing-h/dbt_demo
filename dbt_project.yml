@@ -8,6 +8,8 @@ profile: 'dbt_demo'
 # found in the "models/" directory. You probably won't need to change these!
 model-paths: ["models"]
 macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+asset-paths: ["assets"]
 
 clean-targets:
   - "target"
@@ -28,3 +30,8 @@ models:
       +database: dwh
       +schema: airbnb
       +materialized: table
+
+seeds:
+  dbt_demo:
+    +database: int
+    +schema: airbnb

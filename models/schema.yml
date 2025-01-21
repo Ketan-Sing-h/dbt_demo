@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: dim_listings
+    description: contains information about properties listed in airbnb
+    columns:
+
+      - name: listing_id
+        description: primary key of table dim_listings
+        tests: 
+          - unique
+          - not_null
+      
+      - name: host_id
+        description: reference to dim_hosts
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_hosts')
+              field: host_id
+
+      - name: room_type
+        description: type of room
+        tests:
+          - accepted_values:
+              values: ['Entire home/apt',
+                      'Private room',
+                      'Shared room',
+                      'Entire Home',
+                      'Hotel room']
+        
+      - name: minimum_nights
+        description: '{{ doc("dim_listings_minimum_nights") }}'
+        tests: 
+          - positive_value
+
+  - name: dim_hosts
+    description: contains information about hosts
+    columns:
+      - name: host_id
+      - description: primary key of table
+
+      - name: host_name
+      - description: name of the host 
