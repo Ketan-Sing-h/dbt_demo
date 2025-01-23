@@ -13,11 +13,16 @@ asset-paths: ["assets"]
 
 clean-targets:
   - "target"
+  - "dbt_packages"
+
+on_run_start:
+  - "dbt deps"
 
 models:
   dbt_demo:
-    # +materialized: table
-    # Config indicated by + and applies to all files under models/example/
+    +post-hook:
+      - "GRANT SELECT ON {{ this }} TO ROLE REPORTER_AIRBNB"
+
     staging:
       +materialized: view
       +database: stg

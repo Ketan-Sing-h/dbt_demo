@@ -34,11 +34,11 @@ models:
         tests: 
           - positive_value
 
-  - name: dim_hosts
-    description: contains information about hosts
-    columns:
-      - name: host_id
-      - description: primary key of table
+  # - name: dim_hosts
+  #   description: contains information about hosts
+  #   columns:
+  #     - name: host_id
+  #     - description: primary key of table
 
-      - name: host_name
-      - description: name of the host 
+  #     - name: host_name
+  #     - description: name of the host 
