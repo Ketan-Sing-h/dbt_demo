@@ -15,8 +15,8 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
-on_run_start:
-  - "dbt deps"
+# on_run_start:
+#   - "dbt deps"
 
 models:
   dbt_demo:

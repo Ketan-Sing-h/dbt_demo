@@ -1,0 +1,16 @@
+version: 2
+exposures:
+  - name: Executive Dashboard
+    label: Executive Dashboard
+    type: dashboard
+    maturity: low
+    url: https://461953d1.us1a.app.preset.io/superset/dashboard/8/?edit=true&native_filters_key=_04_L6Z16JAlhSzCdasGZWYocNec69tq3S6xH0EZU8cBymOB-QXZMuGPLOBCK8i1
+    description: Executive Dashboard about Airbnb listings and hosts
+
+    depends_on:
+      - ref('dim_listings_w_hosts')
+      - ref('full_moon_reviews')
+ 
+    owner:
+      name: Ketan
+      email: ketan@gmail.com
